@@ -1,0 +1,16 @@
+Layout references:
+https://blocs.store/category/featured/
+https://not-triplebyte.surge.sh/#
+
+CC's example site:
+https://content.codecademy.com/PRO/independent-practice-projects/flexbox-business-site/example-site/index.html
+
+
+Free photos: 
+https://unsplash.com/t/wallpapers
+https://www.shutterstock.com/discover/stock-image-0120?kw=free%20images%20to%20use&c3apidt=p54661759046&gclid=Cj0KCQiAmKiQBhClARIsAKtSj-nEYaIu6jzNo8Sedf-k7p0rFlrN03p1Q3sBD7m2r2l49FoOp7wLH78aAmnbEALw_wcB&gclsrc=aw.ds
+https://www.pexels.com/
+
+
+CC project forums:
+https://discuss.codecademy.com/t/company-home-page-challenge-project-css-flexbox/462383
