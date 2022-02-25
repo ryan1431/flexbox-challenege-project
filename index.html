@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- Main css -->
   <link rel='stylesheet' type='text/css' media='screen' href='resources/css/main.css'>
-  <script src='main.js'></script>
+  <script src='./resources/js/main.js' defer></script>
 </head>
 <body>
   <header>
@@ -34,20 +34,20 @@
           <li><a href="#">Login</a></li>
           <li><button class="button-main signup">Sign Up</button></li>
         </ul>
-      </ul>
+      </ul> 
     </nav>
   </header>
   <main>
     <!-- hero section -->
-    <div class="block hero">
+    <section class="block hero" id="hero">
         <div id="mission">
           <h1>Optimize your workspace, your way</h1>
           <p>SIMPLEPRODUCTIVE aims to increase productivity and efficiency using proven science based strategies. Whether it's a corporate office or your own home studio, we can help.</p>
-          <button class="button-main">Get Started</button>
+          <button class="button-main" id="get-started-button">Get Started</button>
         </div>
-    </div>
+    </section>
     <!-- What we offer -->
-    <div class="block about">
+    <section class="block about" id="about">
       <div class="content offer">
         <h1>What we offer</h1>
         <div class="offers">
@@ -68,61 +68,84 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Customized to your needs / etc. -->
-    <div class="block customized">
-      <div class="content offer">
-        <h2>Customized to your workspace</h2>
+    <section class="block customized">
+      <div class="content custom">
+        <h2>Solutions for every workspace</h2>
+        <p>From bedroom studio to corporate office, we got you covered.</p>
       </div>
-    </div>
+    </section>
     <!-- Meet our specialists -->
-    <div class="block team">
+    <section class="block team">
       <div class="content">
         <h1>Our team</h1>
-        <div class="offers">
-          <div class="card">
+        <div class="members">
+          <div class="person">
             <img src="resources/images/teammember1.jpeg" alt="">
           </div>
-          <div class="card">
+          <div class="person">
             <img src="resources/images/teammember2.jpeg" alt="">
           </div>
-          <div class="card">
+          <div class="person">
             <img src="resources/images/teammember3.jpeg" alt="">
           </div>
         </div>
       </div>
-      </div>
+      </section>
       <!-- Get started form -->
-      <div class="block get-started">
+      <section class="block get-started" id="contact">
         <div class="content">
           <h1>Get in touch</h1>
+          <form action="" method="POST">
+            <div id="fields">
+              <label for="firstname">First Name: </label>
+                <input type="text" name="firstname" id="firstname" placeholder="John" onfocus="this.placeholder=''" onfocusout="this.placeholder='John'" required>
+              <label for="lastname">Last Name: </label>
+                <input type="text" name="lastname" id="lastname" placeholder="Doe" onfocus="this.placeholder=''" onfocusout="this.placeholder='Doe'">
+              <label for="email">Email: </label>
+                <input type="email" name="email" id="email" placeholder="example@ex.com" onfocus="this.placeholder=''" onfocusout="this.placeholder='example@ex.com'" required>
+              <label for="method">How did you hear about us?</label>
+                <input list="methods" id="method" name="method">
+                <datalist id="methods">
+                    <option value="Referred by a Friend"></option>
+                    <option value="Advertisement"></option>
+                    <option value="Google Search"></option>
+                    <option value="Social Media"></option>
+                    <option value="Work"></option>
+                </datalist>
+              <label for="message">Message: </label>
+                <textarea name="message" id="message" cols="20" rows="1" maxlength="250" placeholder="Enter your message here" onfocus="this.placeholder=''" onfocusout="this.placeholder='Enter your message here'" required></textarea>
+              <input type="submit" value="Submit" id="submit">
+            </div>
+          </form>
         </div>
-      </div>
+      </section>
   </main>
   <footer>
-    <div class="block help">
+    <section class="block help">
       <div class="content">
         <div id="help">
           <div>
             <h2>Support</h2>
-            <p>Contact</p>
-            <p>Privacy Policy</p>
-            <p>Knowledge Base</p>
-            <p>Terms & Conditions</p>
+            <p><a href="#help">Contact</a></p>
+            <p><a href="#help">Privacy Policy</a></p>
+            <p><a href="#help">Knowledge Base</a></p>
+            <p><a href="#help">Terms & Conditions</a></p>
           </div>
           <div>
             <h2>Company</h2>
-            <p>About</p>
-            <p>Blog</p>
-            <p>Team</p>
+            <p><a href="#help">About</a></p>
+            <p><a href="#help">Blog</a></p>
+            <p><a href="#help">Team</a></p>
           </div>
           <div>
             <h2>Follow</h2>
-            <p>test</p>
+            <p><a href="#help">test</a></p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </footer>
 </body>
 </html>

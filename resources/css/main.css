@@ -1,9 +1,10 @@
-/* Box sizing override */
+/* Globals */
 html {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
             font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
 }
 
 *,
@@ -12,6 +13,22 @@ html {
     -webkit-box-sizing: inherit;
         -moz-box-sizing: inherit;
             box-sizing: inherit;
+}
+a:link,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out;
+}
+a:hover {
+    opacity: 0.7;
+}
+h2 {
+    font-weight: 400;
+    margin: 20px 0 15px;
+}
+body {
+    background: rgba(218, 218, 218, 1);
 }
 
 /* Header */
@@ -22,10 +39,10 @@ header {
     justify-content: space-between;
     width: 100%;
     height: 60px;
-    background: rgba(252, 252, 252, 0.95);
     position:absolute;
     top:0px;
     z-index:1;
+    background: rgb(218 218 218 / 78%);
 }
 .logo {
     display: flex;
@@ -61,14 +78,8 @@ header nav a {
 header nav ul ul li {
     margin: 0;
 }
-header a:link,
-header a:visited {
-    color: inherit
-}
-h2 {
-    font-weight: 400;
-    margin: 20px 0 15px;
-}
+
+
 
 /* generic rulesets */
 body {
@@ -94,13 +105,14 @@ h1 {
     align-items: center;
     background: rgba(252, 252, 252, 0.365);
     border: 1px solid gray;
-    transition: all 0.18s ease-in-out;
+    transition: all 0.1s ease-in-out;
     text-transform: upper;
     font-weight: 400;
 }
 .button-main:hover {
-    background: rgba(212, 242, 232, 0.461);
-    cursor: pointer;
+    background: rgb(101, 101, 101);
+    color: white;
+    cursor:pointer;
 }
 .button-main.signup {
     height: 2.5em;
@@ -111,7 +123,7 @@ h1 {
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
     clear: both;
-    padding: 40px 0;
+    padding: 80px 0;
 }
 .content {
     grid-column: 2 / span 10;
@@ -126,12 +138,12 @@ h1 {
     background-attachment: fixed;
     background-size: cover;
     height: 100vh;
-    filter: grayscale(70%);
+    min-height: 600px;
+    filter: grayscale(60%);
 }
 #mission {
     grid-column: 2 / span 5;
     align-self: center;
-    background: rgba(255, 255, 255, 0.88);
     height: 400px;
     margin-top: 60px;
     display: flex;
@@ -140,16 +152,14 @@ h1 {
     align-items: center;
     padding: 0px 10px;
     font-size: 1.1em;
+    background: rgba(218, 218, 218, 0.906)
 }
 #mission p {
     margin: 0;
+    font-size: 1.1em;
 }
 
 /* About */
-.about {
-    height: 600px; 
-    background: none;
-}
 .offers {
     display: flex;
     justify-content: space-around;
@@ -160,7 +170,6 @@ h1 {
     height: fit-content;
     width: 310px;
     padding: 10px;
-    border: 1px solid red;
     flex-shrink: 0;
     
     display: flex;
@@ -183,11 +192,98 @@ h1 {
     height: 500px;
     background-image: url("../images/custom-workspace.jpeg"); /* fallback */
     background-image: url("../images/custom-workspace.jpeg"), linear-gradient(#eb01a5, #d13531); /* W3C */
-    background: linear-gradient(rgb(86 106 108 / 37%), rgb(60 116 53 / 9%)), linear-gradient(to left, rgba(17, 29, 39, 0), #111d27 73%), url(../images/custom-workspace.jpeg);
+    background: linear-gradient(rgb(86 106 108 / 37%), rgb(60 116 53 / 9%)), linear-gradient(to left, rgba(17, 29, 39, 0), #111d27 63%), url(../images/custom-workspace.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     filter: grayscale(100%);
+}
+.content.custom {
+    grid-column: 2 / span 4;
+    text-align: left;
+    color: rgb(218 218 218 / 100%);
+}
+.content.custom h2 {
+    font-weight: 100;
+    font-size: 2em;
+    margin-left: -5%;
+}   
+
+/* Team */
+.members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+.person {
+    height: fit-content;
+    width: 35vh;
+    padding: 10px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+@media only screen and (max-width: 1537px) {
+    .person {
+        flex-grow: 0;
+    }
+}
+
+.person img {
+    max-width: 100%;
+}
+
+/* Get in touch */
+#fields {
+    text-align: left;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 1.2em;
+    margin-top: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+label {
+    margin-top: 5px;
+}
+input, datalist, textarea {
+    font-weight: 100;
+    width: 500px;
+    height: 2em;
+    border: 1px solid grey;
+    border-radius: 0;
+    transition: all 0.25s ease-in-out;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+textarea {
+    resize: none;
+    height: 4em;
+    max-height: 8em;
+}
+input:focus, textarea:focus {
+    border: 1px solid black;
+    outline: none;
+    box-shadow: 3px 3px grey;
+    top: -1.5px;
+    left: -1.5px;
+}
+#submit {
+    width: 20%;
+    margin: 2em auto;
+    background:white;
+    border:none;
+    border: 1px solid grey;
+    transition: all 0.1s ease-in-out;
+}
+#submit:hover {
+    background: rgb(101, 101, 101);
+    color: white;
+    cursor:pointer;
 }
 
 /* Footer */
@@ -195,13 +291,11 @@ footer {
     height: fit-content;
     background: rgb(41, 41, 41)
 }
-
 #help {
     display: flex;
     justify-content: space-evenly;
     color: white;
 }
-
 #help div+div+div {
     margin-left: 150px;
 }
